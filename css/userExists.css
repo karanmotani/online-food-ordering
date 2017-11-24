@@ -1,0 +1,21 @@
+.exists{
+font-weight:bold;
+color:#FF0000;
+font-size:larger;
+}
+
+.succ{
+padding: 2px;
+background-color: green;
+font-weight:bold;
+color:white;
+font-size:larger;
+}
+
+.fail{
+padding: 2px;
+background-color: red;
+font-weight:bold;
+color:white;
+font-size:larger;
+}

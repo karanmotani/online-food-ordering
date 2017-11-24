@@ -1,0 +1,16 @@
+.itembox{
+	border: 1px solid #fff;
+    border-color: white;
+    background-color: white;
+    font-size: 8px;
+	padding:2px;
+	max-width:400px;
+	height: 5px;
+	color:white;
+}
+
+.box{
+	
+	 border: 2px solid #ccc;
+	 border-radius: 4px;
+}
