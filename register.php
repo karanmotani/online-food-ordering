@@ -31,6 +31,7 @@ session_start();
         $("#footer").load("user_footer.php"); 
     });
     </script> 
+
 </head>
 <body id="page-top" class="index">
 <div id="header"></div>
@@ -80,6 +81,7 @@ session_start();
                                 <label>Phone Number</label>
                                 <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
                                 <p class="help-block text-danger"></p>
+                                <span id='prettyNumber'></span>
                             </div>
                         </div>
                         <div class="row control-group">
@@ -115,5 +117,6 @@ session_start();
     <script src="js/register.js"></script>
     <script src="js/login.js"></script>
     <script src="js/freelancer.min.js"></script>
+    <script type="text/javascript" src="js/prettyPhoneNumber.js"></script>
 </body>
 </html>

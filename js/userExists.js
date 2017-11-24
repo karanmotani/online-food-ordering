@@ -8,10 +8,7 @@ $(document).ready(function() {
             	"email": email
             },
             success: function(data){
-            	// alert(data)
-            	// $('#result').addClass('weak')
                 $('#exists').html(data).addClass('short')
-                // window.location.href = "home.php";
             }
 		});
 	})
@@ -24,10 +21,8 @@ $(document).ready(function() {
                 "email": email
             },
             success: function(data){
-                // alert(data)
-                // $('#result').addClass('weak')
                 $('#exists').html(data).addClass('short')
-                // window.location.href = "home.php";
+                $('button').attr('disabled', 'disabled');
             }
         });
     });
