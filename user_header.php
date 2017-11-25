@@ -134,14 +134,15 @@ session_start();
                         </div>
                         <div class="col-lg-4">
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="password" id="loginpassword" required data-validation-required-message="Please enter the right password.">
+                            <input type="password" class="form-control" placeholder="Password" id="loginpassword" required data-validation-required-message="Please enter the right password.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <a href='register.php' style="float: left;"><button type='button' class='btn btn-success'>Register</button></a>
                     <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>
-                    <button type='button' class='btn btn-success' onclick='login()'>Login</button>
+                    <button type='submit' class='btn btn-success' onclick='login()'>Login</button>
                 </div>
             </div>
         </div>

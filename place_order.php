@@ -4,6 +4,7 @@ session_start();
 //$db_handle = new DBController();
 $dbc = mysqli_connect('localhost','root','root','food');
 $email=$_SESSION['user'];
+$_SESSION["totalNoItems"] = 0;
 ?>
 
 <!DOCTYPE html>
@@ -110,6 +111,7 @@ $email=$_SESSION['user'];
 			if(empty($_SESSION["cart_item"]))
 			unset($_SESSION["cart_item"]);
 		}
+		
 		echo "<script>
               alert('Order Placed! Your FOOD will arrive in 45 minutes');
               window.location.href='index.php#portfolio';

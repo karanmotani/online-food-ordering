@@ -21,7 +21,7 @@ $(document).ready(function() {
     	else if(quantity > max){
     		quantity = max;
             $('#' + temp).val(quantity)
-    		alert("Max Quantity for " + name + " is " + max + "!!")
+    		alert("Max Available Quantity for " + name + " is " + max + "!!")
     	}
     	else{
     		quantity = $(this).val();

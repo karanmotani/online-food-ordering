@@ -1,11 +1,16 @@
 $('#loginFrame').on('shown.bs.modal', function () {
-    $('input#email').focus();
+    $('#loginemail').focus();
+    $('#loginpassword').keypress(function(e){
+        if (e.keyCode == 13) {
+            login();
+        }
+    });
 })
 
 function login(){
     var email = $("#loginemail").val();
     var password = $("#loginpassword").val();
-    var current_page=window.location.href;
+
     if (email!="" && password!=""){
         $.ajax({
             type: "POST",

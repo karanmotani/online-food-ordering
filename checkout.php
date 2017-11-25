@@ -53,25 +53,64 @@ if (!isset($_SESSION["user"])) {
             <table cellpadding="10" cellspacing="1" align="right">
                 <tbody>
                     <tr>
-                        <th><strong>Name</strong></th>
-                        <th><strong>Quantity</strong></th>
-                        <th><strong>Price</strong></th>
+                        <th><center><strong>Name</strong></center></th>
+                        <th><center><strong>Quantity</strong></center></th>
+                        <th><center><strong>Price</strong></center></th>
                     </tr>	
                     <?php		
                     foreach ($_SESSION["cart_item"] as $item) {
                         ?>
                         <tr>
-                           <td><strong><?php echo $item["item_name"]; ?></strong></td>
-                           <td><?php echo $item["quantity"]; ?></td>
-                           <td><?php echo "$".$item["price"]; ?></td>
+                           <td><center><strong><?php echo $item["item_name"]; ?></strong></center></td>
+                           <td><center><?php echo $item["quantity"]; ?></center></td>
+                           <td><center><?php echo "$".$item["price"]; ?></center></td>
                        </tr>
                        <?php
                        $item_total += ($item["price"]*$item["quantity"]);
                    }
+
+                   $subTotal = $item_total;
+                   $tax = $subTotal * 0.08;
+                   $delivery = 3.99;
+                   $gTotal = $subTotal + $tax + $delivery;
+
                    ?>
+
                    <tr>
-                    <td colspan="5" align=right><strong>Total:</strong> <?php echo "$".$item_total; ?></td>
-                </tr>
+                        <td></td>
+                        <td></td>
+                       <td><center><?php echo "----------------"; ?></center></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><center><strong>SubTotal: </strong>$<?php echo $subTotal; ?></center></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><center><strong>Tax: </strong>$<?php echo $tax; ?></center></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><center><strong>Delivery: </strong>$<nature id='delivery'><?php echo $delivery; ?></nature></center></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><center><?php echo "----------------"; ?></center></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><center><strong>Net Total: </strong>$<nature id='gTotal'><?php echo $gTotal; ?></nature></center></td>
+                    </tr>
+
             </tbody>
         </table>
         <?php
@@ -80,6 +119,8 @@ if (!isset($_SESSION["user"])) {
         echo "<button class='btn' onclick='location.href=\"index.php\"'>Continue Shopping</button>"
     ?>
     </div>
+    <br/>
+    <br/>
 <section id="Register">
     <div class="container">
         <div class="row">
@@ -88,8 +129,8 @@ if (!isset($_SESSION["user"])) {
                   <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <h4>Promo Code: </h4>
-                        <input type="text" class="form-control"  name="name_on_card" id="name_on_card" required data-validation-required-message="Please enter Address 1">
-                        <p class="help-block text-danger"></p>
+                        <input type="text" class="form-control"  name="promoCode" id="promoCode" placeholder="Enter Valid Promo Code">
+                        <p class="help-block text-danger" id='promo'></p>
                     </div>
                 </div>
                 <div class="row control-group">
@@ -163,5 +204,6 @@ if (!isset($_SESSION["user"])) {
 <script src="js/register.js"></script>
 <script src="js/login.js"></script>
 <script src="js/freelancer.min.js"></script>
+<script type="text/javascript" src="js/promo.js"></script>
 </body>
 </html>
