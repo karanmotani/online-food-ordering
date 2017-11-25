@@ -12,7 +12,7 @@ if(!empty($_GET["action"])) {
     $item_quantity = $resultset[0]["stock"];
     echo $item_quantity;
     $productByCode = $resultset;
-    $itemArray = array($productByCode[0]["item_id"]=>array('item_name'=>$productByCode[0]["item_name"], 'item_id'=>$productByCode[0]["item_id"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["price"]));
+    $itemArray = array($productByCode[0]["item_id"]=>array('item_name'=>$productByCode[0]["item_name"], 'item_id'=>$productByCode[0]["item_id"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["price"], 'item_stock'=>$productByCode[0]["stock"]));
     if(!empty($_SESSION["cart_item"])) {
      $xxx=0;
      foreach($_SESSION["cart_item"] as $k => $v) {
@@ -38,14 +38,20 @@ if(!empty($_SESSION["cart_item"])) {
  foreach($_SESSION["cart_item"] as $k => $v) {
    if($_GET["code"] == $_SESSION["cart_item"][$k]["item_id"])
       unset($_SESSION["cart_item"][$k]);				
-  if(empty($_SESSION["cart_item"]))
+  if(empty($_SESSION["cart_item"])){
       unset($_SESSION["cart_item"]);
+      $_SESSION["totalNoItems"] = 0;
+  }
 }
+}
+else {
+    $_SESSION["totalNoItems"] = 0;
 }
 break;
 
 case "empty":
 unset($_SESSION["cart_item"]);
+$_SESSION["totalNoItems"] = 0;
 break;
 
 case "update":
@@ -55,9 +61,10 @@ while($row=mysqli_fetch_assoc($result)) {
     $resultset[] = $row;
 }
 $item_quantity = $resultset[0]["stock"];
-echo $item_quantity;
+// echo $item_quantity;
+// echo '<script type="text/javascript">alert("'. $item_quantity .'");</script>';
 $productByCode = $resultset;
-$itemArray = array($productByCode[0]["item_id"]=>array('item_name'=>$productByCode[0]["item_name"], 'item_id'=>$productByCode[0]["item_id"], 'quantity'=>$_GET["quantity"], 'price'=>$productByCode[0]["price"]));
+$itemArray = array($productByCode[0]["item_id"]=>array('item_name'=>$productByCode[0]["item_name"], 'item_id'=>$productByCode[0]["item_id"], 'quantity'=>$_GET["quantity"], 'price'=>$productByCode[0]["price"], 'item_stock'=>$productByCode[0]["stock"]));
 if(!empty($_SESSION["cart_item"])) {
     $xxx=0;
     foreach($_SESSION["cart_item"] as $k => $v) {
@@ -121,6 +128,7 @@ break;
         <?php
         if(isset($_SESSION["cart_item"])){
             $item_total = 0;
+            $totalItems = 0;
             ?>	
             <table cellpadding="10" cellspacing="1">
                 <tbody>
@@ -136,14 +144,16 @@ break;
                       ?>
                       <tr>
                         <td id='itemName'><center><strong><?php echo ucfirst($item["item_name"]); ?></strong></center></td>
-                        <td><center><?php echo '<input type="number" class="cartQuantity" id="'. $item["item_id"] ."-".$item["item_name"].'" name="quantity" value="'.$item["quantity"].'" min="1" max="'.$item_quantity.'" style="width:50px;">'; ?></center></td>
+                        <td><center><?php echo '<input type="number" class="cartQuantity" id="'. $item["item_id"]."-".$item["item_id"].'" dish="'.$item["item_name"].'" name="quantity" value="'.$item["quantity"].'" min="1" max="'.$item["item_stock"].'" style="width:50px;">'; ?></center></td>
                         <td><center><?php echo "$".$item["price"]; ?></center></td>
                         <td class='itemPrice' id="<?php echo $item["item_id"]; ?>"><center><?php echo "$".$item["price"]*$item["quantity"]; ?></center></td>
                         <td><center><a href="cart.php?action=remove&code=<?php echo $item["item_id"]; ?>" class="btnRemoveAction">Remove Item</a><center></td>
                         </tr>
                         <?php
                         $item_total += ($item["price"]*$item["quantity"]);
+                        $totalItems += $item["quantity"];
                     }
+                    $_SESSION["totalNoItems"] = $totalItems;
                     ?>
                     <tr>
                     </br>
@@ -163,13 +173,24 @@ break;
             </tr>
         </tbody>
     </table>
-    <button class='btn' onclick="history.go(-1)">Continue Shopping</button>
+    <!-- <button class='btn' onclick="history.go(-1)">Continue Shopping</button> -->
+    <button class='btn' onclick='location.href="index.php"'>Continue Shopping</button>
 </br>
 </br>
+<!-- checkout.php#portfolio -->
+<?php if (!isset($_SESSION["user"])) { ?>
+<form>
+	<a href='javascript:void(0)' data-toggle='modal' data-target='#loginFrame'><button class='btn btn-danger'>CheckOut</button></a>
+</form>
+<?php 
+}
+else {
+?>
 <form action="checkout.php#portfolio" method='POST'>
-	<button class='btn btn-danger' >CheckOut</button>
+    <button class='btn btn-danger'>CheckOut</button>
 </form>
 <?php
+}
 }
 else
     echo "<br /><button class='btn' onclick='location.href=\"index.php\"'>Continue Shopping</button>"

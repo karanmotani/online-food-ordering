@@ -6,13 +6,13 @@ if ($action == 'login') {
     $password = stripslashes(trim($_POST['password'])); 
     if (empty ($email)) { 
         $arr['success'] = 0; 
-        $arr['msg'] = 'Email cannot be blank. ';  
+        $arr['msg'] = 'Email cannot be blank.  Redirecting to home page!';  
         echo json_encode($arr);
         exit; 
     } 
     if (empty ($password)) { 
         $arr['success'] = 0; 
-        $arr['msg'] = 'Password cannot be blank. ';  
+        $arr['msg'] = 'Password cannot be blank.  Redirecting to home page!';  
         echo json_encode($arr);
         exit; 
     } 
@@ -24,7 +24,7 @@ if ($action == 'login') {
     if (!$con)
     {
         $arr['success'] = 0; 
-        $arr['msg'] = 'Connection failure. ';  
+        $arr['msg'] = 'Connection failure.  Redirecting to home page!';  
         echo json_encode($arr);
         exit;
     }
@@ -33,7 +33,7 @@ if ($action == 'login') {
     if($result->num_rows == 0) 
     {
         $arr['success'] = 0; 
-        $arr['msg'] = 'User not found. ';  
+        $arr['msg'] = "User not found. Redirecting to home page!";  
         echo json_encode($arr);
         exit;
     }
@@ -41,7 +41,7 @@ if ($action == 'login') {
     if($md5pass != $userData['password'])
     {
         $arr['success'] = 0; 
-        $arr['msg'] = 'Incorrect password'; 
+        $arr['msg'] = 'Incorrect password. Redirecting to home page!'; 
     }
     else { 
         $_SESSION['user'] = $userData['fullname']; 
@@ -56,7 +56,6 @@ if ($action == 'login') {
 elseif ($action == 'logout') {
     unset($_SESSION); 
     session_destroy(); 
-    echo '1'; 
-    // header('location:index.php');
+    echo '1';
 }
 ?>

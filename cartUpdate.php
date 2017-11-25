@@ -13,7 +13,7 @@ if(!empty($_GET["action"])) {
     $item_quantity = $resultset[0]["stock"];
     // echo $item_quantity;
     $productByCode = $resultset;
-    $itemArray = array($productByCode[0]["item_id"]=>array('item_name'=>$productByCode[0]["item_name"], 'item_id'=>$productByCode[0]["item_id"], 'quantity'=>$_GET["quantity"], 'price'=>$productByCode[0]["price"]));
+    $itemArray = array($productByCode[0]["item_id"]=>array('item_name'=>$productByCode[0]["item_name"], 'item_id'=>$productByCode[0]["item_id"], 'quantity'=>$_GET["quantity"], 'price'=>$productByCode[0]["price"], 'item_stock'=>$productByCode[0]["stock"]));
     
     if(!empty($_SESSION["cart_item"])) {
         $xxx=0;
@@ -38,10 +38,12 @@ if(!empty($_GET["action"])) {
         $_SESSION["cart_item"] = $itemArray;
     }
 
+    $_SESSION["totalNoItems"] = $_GET['totalQuantity'];
+
     $arr = array();
     $arr[0] = $productByCode[0]["price"];
     $arr[1] = $_GET["quantity"];
-
+    $arr[2] = $_SESSION["totalNoItems"];
     echo json_encode($arr);
     return true;
 }

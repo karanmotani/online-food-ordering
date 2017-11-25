@@ -5,6 +5,7 @@ $('#loginFrame').on('shown.bs.modal', function () {
 function login(){
     var email = $("#loginemail").val();
     var password = $("#loginpassword").val();
+    var current_page=window.location.href;
     if (email!="" && password!=""){
         $.ajax({
             type: "POST",
@@ -21,10 +22,15 @@ function login(){
                         window.location.href = "all_items.php";
                     else
                         window.location.href = "index.php";
+                        // window.location.href = 'cart.php';
                 }
                 else { 
                     $('#loginFrame .modal-body').html(json.msg).css("color","#999").appendTo('.sub').fadeOut(2000); 
-                    setTimeout(function(){ location.reload()}, 2000);
+                    setTimeout(function(){ 
+                        // window.location.reload()
+                        window.location.href = 'index.php';
+                        // location.reload()
+                    }, 2000);
                     return false; 
                 } 
             },

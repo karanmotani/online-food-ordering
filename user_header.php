@@ -43,7 +43,7 @@ session_start();
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    
+
                     <li class="page-scroll">
                         <a href="index.php#portfolio">Cuisines</a>
                     </li> 
@@ -52,26 +52,28 @@ session_start();
                         <a href="deals.php#portfolio">Specials</a>
                     </li> 
                     
-                    <li class="page-scroll">
-                        <a href="cart.php"><img src="img\Shopping_cart_icon.png" alt="eAt It Or BeAt It!" width="30" height="25">
-                        </a>            
-                    </li> 
                     
                     <?php
                     if(isset($_SESSION['user']) && (trim($_SESSION['user']) != '')) {
-                        echo "<li class='page-scroll'><a>Hi ".$_SESSION['user']."!</a></li>";
+                        echo "<li class='page-scroll' style='margin-left: 115px;'><a>Hi ".$_SESSION['user']."!</a></li>";
                         echo "<li class='page-scroll'><a href='javascript:void(0)' onclick='logout();'>Logout</a></li>";
                         echo "<li class='page-scroll'>      <a href='order_list.php#portfolio'>Orders</a></li>";
                     }
+
                     else {
-                        echo "<li class='page-scroll'><a href='javascript:void(0)' data-toggle='modal' data-target='#loginFrame'>Login</a></li>";
+                        echo "<li class='page-scroll' style='margin-left: 150px;'><a href='javascript:void(0)' data-toggle='modal' data-target='#loginFrame'>Login</a></li>";
                         echo "<li class='page-scroll'><a href='register.php'>Register</a></li>";
                     }
                     ?>
 
-                    <li class="page-scroll">
-                        <a href="#footer">Contact Us</a>
-                    </li>					
+                    <li class="navbar-right">
+                        <a href="cart.php">
+                            <span class="glyphicon glyphicon-shopping-cart" style="font-size: 20px;">
+                                <span class="rw-number-notification"><?php echo $_SESSION['totalNoItems']; ?></span>
+                            </span>
+                        </a> 
+                    </li> 
+
                 </ul>
             </div>
         </div>
