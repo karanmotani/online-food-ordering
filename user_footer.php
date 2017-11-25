@@ -28,7 +28,7 @@ session_start();
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>77X0 McCallum Blvd
+                        <p>7720 McCallum Blvd
                             <br>Dallas, TX 75252</p>
                     </div>
                     <div class="footer-col col-md-4">
@@ -53,7 +53,7 @@ session_start();
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Phone</h3>
-                        <p>+1(972)345-1143</p>
+                        <p>+1 (972) 345-1143</p>
                     </div>
                 </div>
             </div>

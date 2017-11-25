@@ -16,8 +16,6 @@ function login(){
             },
             success: function(json){
                 if (json.success==1){
-                    //$("#loginFrame .close").click();
-                    //alert("Hello "+ json.user + ", welcome back! ");
                     setTimeout(function(){ $('#loginFrame .modal-body').html("Hello "+ json.user + ", welcome back! ")}, 3000);
                     if (json.msg == "01")
                         window.location.href = "all_items.php";
@@ -26,14 +24,12 @@ function login(){
                 }
                 else { 
                     $('#loginFrame .modal-body').html(json.msg).css("color","#999").appendTo('.sub').fadeOut(2000); 
-                    //alert(json.msg);
                     setTimeout(function(){ location.reload()}, 2000);
                     return false; 
                 } 
             },
             error: function() {
                  $('#loginFrame .modal-body').html("Connection failure, please try again later. "); 
-                 //setTimeout(function(){ location.reload()}, 3000);
             },
         })
     }

@@ -145,7 +145,7 @@ if(mysqli_connect_errno())
                 $item_image=$r['image'];
 
                 $image = base64_encode($item_image);
-                $dispImg = "<img src='data:image/jpg;base64,{$image}' style='width:360px;height:240px;' class='img-responsive' alt=''>";
+                $dispImg = "<img src='data:image/jpg;base64,{$image}' style='width:360px; height:240px; border-radius: 25px; border: 2px solid rgba(44, 62, 80, 0.5);' class='img-responsive' alt=''>";
 
 			?>	
 				<div class="col-sm-4 portfolio-item">
