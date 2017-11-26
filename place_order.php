@@ -1,9 +1,9 @@
 <?php
 session_start();
-//require_once("dbcontroller.php");
-//$db_handle = new DBController();
 $dbc = mysqli_connect('localhost','root','root','food');
 $email=$_SESSION['user'];
+$totalPrice = $_SESSION['totalPrice'];
+$promoFlag = $_SESSION['promoFlag'];
 $_SESSION["totalNoItems"] = 0;
 ?>
 
@@ -54,14 +54,14 @@ $_SESSION["totalNoItems"] = 0;
 	    $price=$item["price"];
 		$balance+=$qty*$price;
 	}
-		$query_insert_orders="INSERT INTO food.orders (email, total_amt, order_date)
-                 	         VALUES ('$email', '$balance',(now()))"; 
+		$query_insert_orders="INSERT INTO food.orders (email, total_amt, order_date, promoFlag)
+                 	         VALUES ('$email', '$balance',(now()), $promoFlag)"; 
 	    $get_insert_orders= mysqli_query($dbc,$query_insert_orders);		
 		$query_get_order_id="SELECT max(order_id) FROM food.orders"; 
 	    $get_order_id= mysqli_query($dbc,$query_get_order_id);
 		
 		if(mysqli_num_rows($get_order_id))
-		{ // if one or more rows are returned do following
+		{
 	        while($r = mysqli_fetch_assoc($get_order_id))
 			{
                 $order_id=$r["max(order_id)"];
@@ -78,7 +78,6 @@ $_SESSION["totalNoItems"] = 0;
 		echo $qty;
 		
 		$item_total += ($item["price"]*$item["quantity"]);
-		
 		
 		$query_stock="SELECT item_id,stock FROM food.food_item where item_name = Rtrim(Ltrim('$item_name_inventory'))"; 
 	    $get_stock= mysqli_query($dbc,$query_stock);
@@ -111,9 +110,13 @@ $_SESSION["totalNoItems"] = 0;
 			if(empty($_SESSION["cart_item"]))
 			unset($_SESSION["cart_item"]);
 		}
+
+		$updateAmount="UPDATE food.orders SET total_amt = '$totalPrice'
+						WHERE order_id = '$order_id'";
+	    $get_insert_orders1= mysqli_query($dbc, $updateAmount);	
 		
 		echo "<script>
-              alert('Order Placed! Your FOOD will arrive in 45 minutes');
+              alert('Order Placed! Your FOOD will arrive in 30 minutes');
               window.location.href='index.php#portfolio';
              </script>";
 }

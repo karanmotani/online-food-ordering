@@ -129,28 +129,28 @@ if (!isset($_SESSION["user"])) {
                   <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <h4>Promo Code: </h4>
-                        <input type="text" class="form-control"  name="promoCode" id="promoCode" placeholder="Enter Valid Promo Code">
-                        <p class="help-block text-danger" id='promo'></p>
+                        <input style='display: inline; width: 98%;' type="text" class="form-control"  name="promoCode" id="promoCode" placeholder="Enter Valid Promo Code">
+                        <p style='display: inline; width: 2%;' class="help-block text-danger" id='promo'></p>
                     </div>
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <h4>Name on Card: </h4>
-                        <input type="text" class="form-control"  name="name_on_card" id="name_on_card" required data-validation-required-message="Please enter Address 1">
+                        <input type="text" class="form-control"  name="name_on_card" id="name_on_card" required data-validation-required-message="Please enter Name" placeholder="Enter name on Card">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <h4>Card Number: </h4>
-                        <input type="number" class="form-control" id="card_number" name="card_number" required data-validation-required-message="Please enter Address 2">
+                        <input type="number" class="form-control" id="card_number" name="card_number" required data-validation-required-message="Please enter Valid Card Number" placeholder="Enter 16 digit Card Number" maxlength="16">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <h4>Expiration Date: </h4>
-                        <select id="type" name="type" style="inline">
+                        <select id="type" name="type" style='display: inline;' required>
                             <option value="01">01</option>
                             <option value="02">02</option>
                             <option value="03">03</option>
@@ -166,7 +166,7 @@ if (!isset($_SESSION["user"])) {
 
                         </select> 
 
-                        <select id="type" name="type" style="inline">
+                        <select id="type" name="type" style='display: inline;' required>
                             <option value="2018">2018</option>
                             <option value="2019">2019</option>
                             <option value="2020">2020</option>
