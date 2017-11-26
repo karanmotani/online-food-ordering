@@ -45,7 +45,8 @@ if ($action == 'login') {
     }
     else { 
         $_SESSION['user'] = $userData['fullname']; 
-        $_SESSION['roles'] = $userData['roles']; 
+        $_SESSION['roles'] = $userData['roles'];
+        $_SESSION['userEmail'] = $email;  
         
             $arr['success'] = 1; 
             $arr['msg'] = $userData['roles']; 

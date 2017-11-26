@@ -50,7 +50,7 @@ if (!isset($_SESSION["user"])) {
 			</div>
 
 			<div id="shopping-cart">
-				<div class="txt-heading">Orders</div>
+				<div class="txt-heading"><h4><center>Orders</center></h4></div>
 				<?php
 				if(isset($_SESSION['user'])){
 					?>	

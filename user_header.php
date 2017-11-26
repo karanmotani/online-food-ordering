@@ -55,7 +55,7 @@ session_start();
                     
                     <?php
                     if(isset($_SESSION['user']) && (trim($_SESSION['user']) != '')) {
-                        echo "<li class='page-scroll' style='margin-left: 115px;'><a>Hi ".$_SESSION['user']."!</a></li>";
+                        echo "<li class='page-scroll' style='margin-left: 115px;'><a href='profile.php'>Hi ".$_SESSION['user']."!</a></li>";
                         echo "<li class='page-scroll'><a href='javascript:void(0)' onclick='logout();'>Logout</a></li>";
                         echo "<li class='page-scroll'>      <a href='order_list.php#portfolio'>Orders</a></li>";
                     }

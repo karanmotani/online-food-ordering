@@ -42,21 +42,31 @@ session_start();
                     <hr class="star-primary">
                 </div>
             </div>
+            <br>
             <div class="row">
-			    <div class="col-sm-5 portfolio-item">
-                    <img src="img/students-offer.jpg" class="img-responsive" alt="">
-					<p><strong>USE CODE : STDNT121</strong></p>
-					<p><strong>To get 25% cash back</strong></p>
+                <center>
+                <div style="display: inline-block; margin-right: 150px;">
+                    <img src="img/c3.jpg" class="img-responsive" alt="" style="height: 250px; width: 400px;"></br>
+                    <p><strong>USE CODE : HSOFF50</strong></p>	
+                    <p><strong>To get 50% discount!</strong></p>					
                 </div>
-                <div class="col-sm-4 portfolio-item">
-                    <img src="img/mon.jpg" class="img-responsive" alt=""></br>
-                    <p><strong>USE CODE : MONOFF</strong></p>	
-                    <p><strong>To get 50% cash back</strong></p>					
+				<div style="display: inline-block;">
+                    <img src="img/free_delivery.png" class="img-responsive" alt="" style="height: 250px; width: 400px;"></br>
+                    <p><strong>USE CODE : HSFREEDEL</strong></p>
+                    <p><strong>To get <font color="red">FREE</font> Delivery!</strong></p>				
+				</div>       
+                <br><hr><br>
+                <div style="display: inline-block; margin-right: 150px;">
+                    <img src="img/c2.jpg" alt="" style="height: 450px; width: 350px;">
+                    <p><strong>USE CODE : HSGET15</strong></p>
+                    <p><strong>To get 15% discount!</strong></p>
                 </div>
-				<div class="col-sm-3 portfolio-item">
-                    <img src="img/free_delivery.png" class="img-responsive" alt=""></br>
-                    <p><strong>USE CODE : FREEDEL</strong></p>				
-				</div>                               
+                <div style="display: inline-block;">
+                    <img src="img/easter.jpg" alt="" style="height: 450px; width: 350px;"></br>
+                    <p><strong>USE CODE : HSEAS50</strong></p>
+                    <p><strong>To get 50% Off this EASTER!</font></strong></p>               
+                </div> 
+                </center>                     
 		    </div>
         </div>
     </section>
