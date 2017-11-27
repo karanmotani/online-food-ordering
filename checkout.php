@@ -125,7 +125,7 @@ if (!isset($_SESSION["user"])) {
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <form name="payment" id="payment" novalidate>				
+                <form name="payment" id="payment">				
                   <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <h4>Promo Code: </h4>
@@ -136,7 +136,7 @@ if (!isset($_SESSION["user"])) {
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <h4>Name on Card: </h4>
-                        <input type="text" class="form-control"  name="name_on_card" id="name_on_card" required data-validation-required-message="Please enter Name" placeholder="Enter name on Card">
+                        <input type="text" class="form-control"  name="name_on_card" id="name_on_card" data-validation-required-message="Please enter Name" placeholder="Enter name on Card" required>
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
@@ -184,7 +184,7 @@ if (!isset($_SESSION["user"])) {
         </br>
     </br>
     <form action="place_order.php" method='POST'>
-       <button class='btn btn-danger'>Place Order</button>
+       <button id='check1' class='btn btn-danger'>Place Order</button>
    </form>
 </div>
 </div>

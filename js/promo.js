@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$('#promoCode').on('blur', promoCheck)
-
+	$('#name_on_card').on('blur', promoCheck1)
 	function promoCheck() {
 		var flag = 0
 		var promoCode = $('#promoCode').val()
@@ -66,11 +66,56 @@ $(document).ready(function() {
 		else if (promoCode == '') {
 			$('#promo').hide()
 			flag = 0
+			var totalPrice = parseFloat(($('#gTotal').text())*1.00).toFixed(2)
+			// alert(totalPrice)
+			$.ajax({
+	            url: "placeOrder1.php",
+	            type: "POST",
+	            data: {
+	            	"totalPrice": totalPrice,
+	            	"promoFlag": flag
+	            },
+	            success: function(data){
+	            }
+			});
 		}
 
 		else {
 			flag = 0;
+			var totalPrice = parseFloat(($('#gTotal').text())*1.00).toFixed(2)
+			// alert(totalPrice)
 			$('#promo').html('&#10008;').show().css({'float': 'right', 'color': 'red'});
+			$.ajax({
+	            url: "placeOrder1.php",
+	            type: "POST",
+	            data: {
+	            	"totalPrice": totalPrice,
+	            	"promoFlag": flag
+	            },
+	            success: function(data){
+	            }
+			});
+		}
+
+	}
+
+	function promoCheck1() {
+
+		if (promoCode == '') {
+			$('#promo').hide()
+			flag = 0
+			var totalPrice = parseFloat(($('#gTotal').text())*1.00).toFixed(2)
+			// alert(totalPrice)
+			$.ajax({
+	            url: "placeOrder1.php",
+	            type: "POST",
+	            data: {
+	            	"totalPrice": totalPrice,
+	            	"promoFlag": flag
+	            },
+	            success: function(data){
+	            }
+			});
 		}
 
 	}

@@ -4,6 +4,8 @@ $dbc = mysqli_connect('localhost','root','root','food');
 $email=$_SESSION['user'];
 $totalPrice = $_SESSION['totalPrice'];
 $promoFlag = $_SESSION['promoFlag'];
+if($promoFlag != 1)
+	$promoFlag = 0;
 $_SESSION["totalNoItems"] = 0;
 ?>
 
@@ -54,9 +56,24 @@ $_SESSION["totalNoItems"] = 0;
 	    $price=$item["price"];
 		$balance+=$qty*$price;
 	}
+
+		// echo '<script type="text/javascript">alert("'. $email, $balance, $promoFlag .'");</script>';	
 		$query_insert_orders="INSERT INTO food.orders (email, total_amt, order_date, promoFlag)
-                 	         VALUES ('$email', '$balance',(now()), $promoFlag)"; 
+                 	         VALUES ('$email', '$balance',(now()), $promoFlag);"; 
 	    $get_insert_orders= mysqli_query($dbc,$query_insert_orders);		
+		
+		// if($get_insert_orders)
+		// {
+		// echo '<script type="text/javascript">alert("success");</script>';
+
+		// }
+		// else
+		// {
+		// echo '<script type="text/javascript">alert("error");</script>';
+
+		// }
+
+
 		$query_get_order_id="SELECT max(order_id) FROM food.orders"; 
 	    $get_order_id= mysqli_query($dbc,$query_get_order_id);
 		
@@ -67,8 +84,13 @@ $_SESSION["totalNoItems"] = 0;
                 $order_id=$r["max(order_id)"];
 			}
         }
-		echo $order_id;
-	
+        // $order11 = parseInt($order_id) + 1;
+
+	    // $r = mysqli_fetch_assoc($get_order_id);
+	    // $order_id = $r['order_id'];
+
+		// echo $order_id;
+		// echo '<script type="text/javascript">alert("'. $order_id .'");</script>';
     foreach ($_SESSION["cart_item"] as $item)
 	{
 		$item_name_inventory=$item["item_name"]; 
@@ -110,11 +132,21 @@ $_SESSION["totalNoItems"] = 0;
 			if(empty($_SESSION["cart_item"]))
 			unset($_SESSION["cart_item"]);
 		}
-
+		if($totalPrice != 0){
 		$updateAmount="UPDATE food.orders SET total_amt = '$totalPrice'
 						WHERE order_id = '$order_id'";
 	    $get_insert_orders1= mysqli_query($dbc, $updateAmount);	
-		
+	}
+	else{
+		$totot = $balance*1.08 + 3.99;
+		$updateAmount="UPDATE food.orders SET total_amt = '$totot'
+						WHERE order_id = '$order_id'";
+	    $get_insert_orders1= mysqli_query($dbc, $updateAmount);	
+
+	}
+	    unset($_SESSION["promoFlag"]);
+		unset($_SESSION["totalPrice"]);
+
 		echo "<script>
               alert('Order Placed! Your FOOD will arrive in 30 minutes');
               window.location.href='index.php#portfolio';
