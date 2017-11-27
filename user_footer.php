@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>eAt It Or BeAt It!</title>
+    <title>Hunger Station!</title>
 
 	<link rel="icon" href="img/giphy.gif" />
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +62,7 @@ session_start();
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        eAt It Or BeAt It!
+                        Hunger Station!
                     </div>
                 </div>
             </div>

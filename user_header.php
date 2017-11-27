@@ -12,7 +12,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>eAt It Or BeAt It!</title>
+    <title>Hunger Station!</title>
 
     <link rel="icon" href="img/giphy.gif" />
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,8 +20,8 @@ session_start();
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo|Kavoon" rel="stylesheet">
     <script type="text/javascript" src="js/login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
@@ -32,10 +32,9 @@ session_start();
         <div class="container">
             <div class="navbar-header page-scroll">
                 <a class="navbar-left" href="#page-top">
-                    <img src="img\spoon-and-fork.png" alt="eAt It Or BeAt It!" 
-                        style="width:40px; height:40px; margin-top:7px; margin-right: 10px;">
+                    <img src="img\logo1.png" alt="Hunger Station!" 
+                        style="margin-right: 10px; height: 55px; width: 110px;">
                 </a>
-                <a class="navbar-brand" href="index.php">~ eAt It Or BeAt It! ~</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -55,13 +54,13 @@ session_start();
                     
                     <?php
                     if(isset($_SESSION['user']) && (trim($_SESSION['user']) != '')) {
-                        echo "<li class='page-scroll' style='margin-left: 115px;'><a href='profile.php'>Hi ".$_SESSION['user']."!</a></li>";
+                        echo "<li class='page-scroll' style='border: 1px solid white; border-radius:15px;'><a href='profile.php'>Hi ".$_SESSION['user']."!</a></li>";
                         echo "<li class='page-scroll'><a href='javascript:void(0)' onclick='logout();'>Logout</a></li>";
-                        echo "<li class='page-scroll'>      <a href='order_list.php#portfolio'>Orders</a></li>";
+                        echo "<li class='page-scroll'><a href='order_list.php#portfolio'>Orders</a></li>";
                     }
 
                     else {
-                        echo "<li class='page-scroll' style='margin-left: 150px;'><a href='javascript:void(0)' data-toggle='modal' data-target='#loginFrame'>Login</a></li>";
+                        echo "<li class='page-scroll'><a href='javascript:void(0)' data-toggle='modal' data-target='#loginFrame'>Login</a></li>";
                         echo "<li class='page-scroll'><a href='register.php'>Register</a></li>";
                     }
                     ?>
@@ -84,7 +83,7 @@ session_start();
             <div class="row">
                 <div class="bgimg">
                     <div class="intro-text">
-                        <span class="name" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">~ eAt It Or BeAt It! ~</span>
+                        <span class="name" style="text-shadow: -1px 0 cyan, 0 1px cyan, 1px 0 grey, 0 -1px grey; font-family: 'Exo', sans-serif; letter-spacing: 5px; font-weight: 900;">Hunger Station</span>
                         <hr class="star-light" />
                         <span class="skills" style="text-shadow: -2px 0 grey, 0 2px grey, 1px 0 grey, 0 -1px grey;">Authentic Indian and Chinese Delicacies </span>
                    

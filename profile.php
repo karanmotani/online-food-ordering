@@ -28,8 +28,6 @@ $query1 = "SELECT STREET
 
 $result1 = mysqli_query($con, $query1) or die('MySQL query error');
 $r1 = mysqli_fetch_array($result1);
-
-// echo '<script type="text/javascript">alert("'. $r1['STREET'] .'");</script>';
 ?>
 
 <!DOCTYPE html>
