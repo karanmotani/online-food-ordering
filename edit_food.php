@@ -42,7 +42,7 @@ session_start();
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <form name="add_new_item" id="add_item_form" method="POST" enctype="multipart/form-data" action="add_item_page.php" novalidate>
+                    <form name="add_new_item" id="add_item_form" method="POST" enctype="multipart/form-data" action="add_item_page.php">
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Item Name</label>
@@ -68,7 +68,7 @@ session_start();
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <h4>Type</h4>
 						        <select id="type" name="type" style="inline">
-                                    <option value="indian">indian</option>
+                                    <option value="indian" selected>indian</option>
                                     <option value="chinese">chinese</option>
                                     <option value="dessert">dessert</option>
                                     <option value="breakfast">breakfast</option>
@@ -84,15 +84,15 @@ session_start();
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Stock</label>
-                                <textarea type="number" class="form-control" placeholder="Stock" id="stock" name="stock" required data-validation-required-message="Please enter stock."></textarea>
+                                <input type="number" class="form-control" placeholder="Stock" id="stock" name="stock" required data-validation-required-message="Please enter stock."></input>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
 					<div class="row">
                         <div class="col-sm-4 portfolio-item">
-                                <label>Select image to upload:</label>
-                                <input type="file" name="image" id="image">
-                                <p class="help-block text-danger"></p>
+                            <label>Select image to upload:</label>
+                            <input type="file" name="image" required data-validation-required-message="Please upload image." id="image">
+                            <p class="help-block text-danger"></p>
                         </div>
                     </div>
 						<p class="help-block text-danger"></p>

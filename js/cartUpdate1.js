@@ -13,10 +13,10 @@ $(document).ready(function() {
     	// alert(max)
         // alert(quantity)
 
-    	if(quantity == 0 || isNaN(quantity)){
+    	if(quantity <= 0 || isNaN(quantity)){
     		quantity = 1;
             $('#' + temp).val(quantity)
-    		alert(name + " quantity cannot be NULL. \nPlease click on remove if you do not want this item!")
+    		alert(name + " Quantity not valid. \nPlease click on remove if you do not want this item!")
     	}
     	else if(quantity > max){
     		quantity = max;

@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	$('#promoCode').on('blur', promoCheck)
 	$('#name_on_card').on('blur', promoCheck1)
+	$('#card_number').on('keyup', checkCard)
 	function promoCheck() {
 		var flag = 0
 		var promoCode = $('#promoCode').val()
@@ -117,7 +118,23 @@ $(document).ready(function() {
 	            }
 			});
 		}
+	}
 
+
+	function checkCard() {
+		var cardNumber = $('#card_number').val()
+		// alert(cardNumber.length)
+		if(cardNumber.length != 16) {
+			$('#checkValidCard').show()
+			$('#checkValidCard').html('Enter Valid Card Number!').addClass('short')
+			$('#check1').attr('disabled', 'disabled');
+
+		}
+
+		else if(cardNumber.length == 16) {
+			$('#checkValidCard').hide()
+			$('#check1').attr('disabled', false);
+		}
 	}
 
 });

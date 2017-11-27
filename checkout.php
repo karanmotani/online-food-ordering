@@ -28,6 +28,7 @@ if (!isset($_SESSION["user"])) {
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <link href="css/cart.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/passwordscheck.css">
     <script> 
         $(function()
         {
@@ -125,7 +126,7 @@ if (!isset($_SESSION["user"])) {
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <form name="payment" id="payment">				
+                <form name="payment" method = "POST" id="payment" action="place_order.php">				
                   <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <h4>Promo Code: </h4>
@@ -143,8 +144,9 @@ if (!isset($_SESSION["user"])) {
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <h4>Card Number: </h4>
-                        <input type="number" class="form-control" id="card_number" name="card_number" required data-validation-required-message="Please enter Valid Card Number" placeholder="Enter 16 digit Card Number" maxlength="16">
+                        <input type="number" class="form-control" id="card_number" name="card_number" required data-validation-required-message="Please enter Valid Card Number" placeholder="Enter 16 digit Card Number" size="16">
                         <p class="help-block text-danger"></p>
+                        <span id='checkValidCard'></span>
                     </div>
                 </div>
                 <div class="row control-group">
@@ -178,12 +180,12 @@ if (!isset($_SESSION["user"])) {
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
-            </form>
+            <!-- </form> -->
             <p class="help-block text-danger"></p>
             <button class='btn' onclick="history.go(-1)">Continue Shopping</button>
         </br>
     </br>
-    <form action="place_order.php" method='POST'>
+    <!-- <form action="place_order.php" method='POST'> -->
        <button id='check1' class='btn btn-danger'>Place Order</button>
    </form>
 </div>

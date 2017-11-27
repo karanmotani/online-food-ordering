@@ -22,12 +22,16 @@ function login(){
             },
             success: function(json){
                 if (json.success==1){
-                    setTimeout(function(){ $('#loginFrame .modal-body').html("Hello "+ json.user + ", welcome back! ")}, 3000);
+                    setTimeout(function(){ $('#loginFrame .modal-body').html("Hello "+ json.user + ",  Nice to see you again! ")}, 800);
                     if (json.msg == "01")
-                        window.location.href = "all_items.php";
+                        setTimeout(function() {
+                            window.location.href = "all_items.php";
+                        }, 2000);
+
                     else
+                        setTimeout(function() {
                         window.location.href = "index.php";
-                        // window.location.href = 'cart.php';
+                    }, 2000);
                 }
                 else { 
                     $('#loginFrame .modal-body').html(json.msg).css("color","#999").appendTo('.sub').fadeOut(2000); 

@@ -14,7 +14,7 @@ window.onload = function() {
     if(item+12 > ount) {
         $('#nxtPage').attr('disabled', 'disabled');
     }
-    var page="&nbsp;item "+(item+1)+" - "+((item+12)>ount?ount:(item+12))+"&nbsp;";
+    var page="&nbsp;Item "+((ount)==0?0:(item+1))+" - "+((item+12)>ount?ount:(item+12))+"&nbsp;";
     $('#itemCount').html(page);
 };
 
