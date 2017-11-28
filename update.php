@@ -46,6 +46,6 @@ session_start();
     $add_category = mysqli_query($dbc,$query_up_category);    
 	echo "<script>
           alert('$item_name_up successfully updated');
-          window.location.href='all_items.php#portfolio';
+          window.location.href='stock.php';
           </script>";
 ?>

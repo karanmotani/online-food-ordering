@@ -58,7 +58,10 @@ session_start();
                         echo "<li class='page-scroll'><a href='javascript:void(0)' data-toggle='modal' data-target='#loginFrame'>Login</a></li>";
                         echo "<li class='page-scroll'><a href='register.php'>Register</a></li>";
                     }
-                    ?>					
+                    ?>		
+                    <li class="page-scroll">
+                        <a href="stock.php">Inventory</a>
+                    </li>			
                 </ul>
             </div>
         </div>
