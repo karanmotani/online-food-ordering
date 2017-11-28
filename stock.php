@@ -131,7 +131,7 @@ $all_items = mysqli_query($dbc,$query_items);
                         <td>
                             <input class="itembox" size ="1" name="item_name_box" id="item_name_box" type="text" readonly="true" value= "<?php echo $item_name; ?>" />
 
-                            <input class="textbox" size="2" name="item_name_box1" id="item_name_box" type="text" readonly="true" value= "<?php echo $counterId; ?>" />
+                            <input class="textbox" size="2" name="item_name_box1" id="item_name_box1" type="text" readonly="true" value= "<?php echo $counterId; ?>" />
                         </td>
 
                         <td>
@@ -143,7 +143,10 @@ $all_items = mysqli_query($dbc,$query_items);
                        </td>
 
                        <td>
-                           <center><input class="textbox" size="2" name="item_stock" id="item_desc_box" type="text" readonly="true" value= "<?php echo $item_stck; ?>" /></center>
+                           <center>
+                            <input class="textbox nature" size="2" name="item_stock" id="<?php echo $item_id; ?>" type="text" value= "<?php echo $item_stck; ?>" style='border: 1px solid black; border-radius: 5px;' />
+                            <sup><i class="fa fa-pencil-square-o" aria-hidden="true"></i></sup>
+                          </center>
                        </td>
 
                        <td>
@@ -183,5 +186,6 @@ $all_items = mysqli_query($dbc,$query_items);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="js/jqBootstrapValidation.js"></script>
 <script src="js/freelancer.min.js"></script>
+<script type="text/javascript" src='js/stockUpdate.js'></script>
 </body>
 </html>
