@@ -36,7 +36,7 @@ $all_items = mysqli_query($dbc,$query_items);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>eAt It Or BeAt It!</title>
+    <title>Hunger Station!</title>
 
     <link rel="icon" href="img/giphy.gif" />
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

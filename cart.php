@@ -96,7 +96,7 @@ break;
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shopping Cart</title>
+    <title>Hunger Station!</title>
 
     <link rel="icon" href="img/giphy.gif" />
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

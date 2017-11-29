@@ -17,7 +17,7 @@ $_SESSION["totalNoItems"] = 0;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Checkout</title>
+    <title>Hunger Station!</title>
 	<link rel="icon" href="img/giphy.gif" />
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/freelancer.min.css" rel="stylesheet">

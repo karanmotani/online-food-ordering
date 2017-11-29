@@ -15,7 +15,7 @@ $(document).ready(function() {
 			$('button').prop('disabled', false);
 			$("#prettyNumber").hide();
 			$('#phone').val(result)
-			$('#phone').val() = phoneNumber
+			// $('#phone').val(phoneNumber)
 		}
 
 	})

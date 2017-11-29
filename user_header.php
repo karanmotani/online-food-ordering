@@ -21,7 +21,8 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Exo|Kavoon" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Exo|Kavoon" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Chango" rel="stylesheet">
     <script type="text/javascript" src="js/login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
@@ -31,7 +32,7 @@ session_start();
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <a class="navbar-left" href="#page-top">
+                <a class="navbar-left" href="index.php">
                     <img src="img\logo1.png" alt="Hunger Station!" 
                         style="margin-right: 10px; height: 55px; width: 110px;">
                 </a>
@@ -83,7 +84,7 @@ session_start();
             <div class="row">
                 <div class="bgimg">
                     <div class="intro-text">
-                        <span class="name" style="text-shadow: -1px 0 cyan, 0 1px cyan, 1px 0 grey, 0 -1px grey; font-family: 'Exo', sans-serif; letter-spacing: 5px; font-weight: 900;">Hunger Station</span>
+                        <span class="name" style="text-shadow: -1px 0 cyan, 0 1px cyan, 1px 0 grey, 0 -1px grey; font-family: 'Chango', cursive; letter-spacing: 1px; font-size: 70px;">Hunger Station</span>
                         <hr class="star-light" />
                         <span class="skills" style="text-shadow: -2px 0 grey, 0 2px grey, 1px 0 grey, 0 -1px grey;">Authentic Indian and Chinese Delicacies </span>
                    

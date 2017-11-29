@@ -12,7 +12,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>eAt It Or BeAt It!</title>
+    <title>Hunger Station!</title>
 	
 	<link rel="icon" href="img/giphy.gif" />
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -75,7 +75,6 @@ session_start();
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
     <script src="js/freelancer.min.js"></script>
 </body>
 </html>

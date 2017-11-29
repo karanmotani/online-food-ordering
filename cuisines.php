@@ -42,7 +42,7 @@ $total=0;
     // $cuisines=$category;
 	$query_items="SELECT food_item.item_id, item_name, description, stock,image FROM food_item 
 	INNER JOIN category ON food_item.item_id=category.item_id 
-	and category.type='$category' and (stock>=1 and status='a') limit  " . $lim . ", 13";
+	and category.type='$category' and (stock>=1 and status='a') limit  " . $lim . ", 12";
     
     $query1 = "SELECT food_item.item_id, item_name, description, stock,image FROM food_item 
     INNER JOIN category ON food_item.item_id=category.item_id 
@@ -59,7 +59,7 @@ $total=0;
     <meta name="description" content="">
     <meta name="author" content="">
     
-	<title>eAt It Or BeAt It!</title>
+	<title>Hunger Station!</title>
 	
 	<link rel="icon" href="img/giphy.gif" />
 
@@ -178,7 +178,6 @@ $total=0;
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 	<script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
     <script type="text/javascript">var ount = "<?= $ount ?>";</script>
     <script src="js/page1.js"></script>
 	<script src="js/freelancer.min.js"></script>

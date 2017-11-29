@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>eAt It Or BeAt It!</title>
+    <title>Hunger Station!</title>
 
 	<link rel="icon" href="img/giphy.gif" />
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -95,7 +95,7 @@ session_start();
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Register</button>
+                                <button type="submit" id='registerButton' class="btn btn-success btn-lg">Register</button>
                             </div>
                         </div>
                     </form>
